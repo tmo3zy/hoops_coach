@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTrainingActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_choose_type"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/et_training_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:hint="Название тренировки"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/selection1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="32dp"
+            android:text="Выберите тип тренировки:"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_training_name" />
+
+        <RadioGroup
+            android:id="@+id/radios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selection1">
+
+            <RadioButton android:id="@+id/personal_training"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Индивидуальная" />
+            <RadioButton android:id="@+id/group_training"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Групповая" />
+            <RadioButton
+                android:id="@+id/team_training"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Командная"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/selection2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textSize="24sp"
+            android:layout_marginLeft="15dp"
+            android:text="Выберите специализацию:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radios" />
+
+        <RadioGroup
+            android:id="@+id/radios2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selection2">
+
+            <RadioButton android:id="@+id/shooting_training"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Бросковая" />
+            <RadioButton android:id="@+id/dribbling_training"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дриблинг" />
+            <RadioButton
+                android:id="@+id/play_training"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Игровая"/>
+
+            <RadioButton
+                android:id="@+id/physical_training"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Физ. подготовка"/>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Далее"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radios2"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/add_players_layout"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Выберите игроков"
+            android:textSize="24dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_no_groups"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Похоже, вы ещё не объединяли игроков в группы. Сделайте это по кнопке ниже"
+            android:gravity="center"
+            android:textSize="16dp"/>
+
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/player_chips"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_above="@id/btn_to_exercises"
+            android:background="#F3EEEE"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp" />
+
+        <ListView
+            android:id="@+id/team_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/player_chips"
+            android:layout_below="@+id/tv"
+            android:choiceMode="multipleChoice" />
+
+        <Button
+            android:id="@+id/btn_to_exercises"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"
+            android:text="Далее"
+            android:layout_marginBottom="50dp"/>
+
+        <Button
+            android:id="@+id/btn_to_addGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/purple_700"
+            android:text="Добавить группу"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/exercises_layout">
+
+<!--        <EditText-->
+<!--            android:id="@+id/editTextText3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="80dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Название"-->
+<!--            android:inputType="text"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.502"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/editTextText4"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginTop="32dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Описание/комментарии"-->
+<!--            android:inputType="text"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/editTextText3" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button5"-->
+<!--            style="@style/Widget.MaterialComponents.Button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="300dp"-->
+<!--            android:backgroundTint="@color/purple_700"-->
+<!--            android:text="Создать упражнение"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.481"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/editTextText4"-->
+<!--            app:layout_constraintVertical_bias="0.161" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button6"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="32dp"-->
+<!--            android:text="Добавить существующее"-->
+<!--            style="@style/Widget.MaterialComponents.Button"-->
+<!--            android:backgroundTint="@color/purple_700"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/button5" />-->
+
+<!--        <com.google.android.material.chip.ChipGroup-->
+<!--            android:id="@+id/chipGroup"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="250dp"-->
+<!--            android:layout_marginLeft="15dp"-->
+<!--            android:layout_marginRight="15dp"-->
+<!--            android:background="#F3EEEE"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.724"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/button6"-->
+<!--            app:layout_constraintVertical_bias="0.216" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button7"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Завершить"-->
+<!--            style="@style/Widget.MaterialComponents.Button"-->
+<!--            android:backgroundTint="@color/purple_700"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/chipGroup" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView5"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="32dp"-->
+<!--            android:text="Добавьте упражнения"-->
+<!--            android:textSize="16sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Добавьте упражнения"
+            android:gravity="center"
+            android:textSize="24dp" />
+
+        <ListView
+            android:id="@+id/exercises_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView4"
+            android:layout_above="@id/chipGroup"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_no_exercises"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="16dp"
+            android:text="Похоже, вы ещё не добавляли упражнения для выбранной тренировки. Вы можете сделать это по кнопке ниже"
+            android:gravity="center"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_above="@id/button5"
+            android:background="#F3EEEE"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"
+            android:text="Создать упражнение"
+            android:layout_above="@+id/button7"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"
+            android:text="Завершить"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

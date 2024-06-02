@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowTrainingDataActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_personalTeamTrainingData"
+        android:visibility="gone">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dataView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_below="@+id/textView11"
+            android:layout_above="@+id/btn_finishTraining"/>
+
+        <TextView
+            android:id="@+id/tv_trainingType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Тип тренировки: "
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_training_specialization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Специализация: "
+            android:textSize="24sp"
+            android:layout_below="@id/tv_trainingType"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Выполнение: "
+            android:textSize="24sp"
+            android:layout_below="@+id/tv_training_specialization"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_finishTraining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Завершить тренировку"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"
+            android:layout_above="@id/btn_backToTrainings"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/btn_backToTrainings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Назад"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_groupTrainingData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_trainingType2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="24sp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/tv_training_specialization2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_trainingType2"
+            android:textSize="24sp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/tv_groups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_training_specialization2"
+            android:textSize="24sp"
+            android:layout_centerHorizontal="true"
+            android:text="Группы: "/>
+
+        <ListView
+            android:id="@+id/groupList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_groups"
+            android:layout_above="@+id/btn_finishTraining1"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btn_finishTraining1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/btn_backToTrainings1"
+            android:text="Завершить тренировку"/>
+
+
+        <Button
+            android:id="@+id/btn_backToTrainings1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"
+            android:text="Назад"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/playerPersonalLayout"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_playerTrainingType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="24sp"
+            android:text="Тип тренировки: "
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_playerTrainingSpecialization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_playerTrainingType"
+            android:layout_marginTop="8dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Специализация:"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_playerTrainingSpecialization"
+            android:layout_marginTop="8dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Упражнения:"
+            android:layout_centerHorizontal="true"/>
+
+        <ListView
+            android:id="@+id/playerExercisesList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_title"
+            android:layout_above="@id/btn_completeTraining"/>
+
+        <Button
+            android:id="@+id/btn_completeTraining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_backToTrainings2"
+            android:layout_centerHorizontal="true"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"
+            android:text="Завершить выполнение"/>
+
+        <Button
+            android:id="@+id/btn_backToTrainings2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"
+            android:text="Назад"/>
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/playerGroupTrainingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/tv_playerTrainingSpecialization1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="TextView"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_playerTrainingType1" />
+
+        <TextView
+            android:id="@+id/tv_playerTrainingType1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Ваша группа: "
+            android:textStyle="bold"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_playerTrainingSpecialization1" />
+
+        <TextView
+            android:id="@+id/tv_members"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="TextView"
+            android:gravity="center"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/textView17"
+            tools:layout_editor_absoluteX="46dp" />
+
+        <Button
+            android:id="@+id/btn_toTrainingExercises"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"
+            android:text="К упражнениям"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_members" />
+
+        <Button
+            android:id="@+id/btn_completeTraining1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Завершить выполнение"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"
+            app:layout_constraintBottom_toTopOf="@+id/btn_backToTrainings3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_backToTrainings3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Назад"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/purple_700"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateGroupActivity">
+
+
+    <EditText
+        android:id="@+id/et_groupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Название группы"/>
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_groupName"
+        android:layout_marginTop="15dp"
+        android:text="Выберите игроков"
+        android:textSize="18dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ListView
+        android:id="@+id/playerForGroupsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView5"
+        android:layout_above="@id/selectedPlayersGroup"
+        android:choiceMode="multipleChoice"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/selectedPlayersGroup"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#F3EEEE"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_above="@+id/btn_addGroup"/>
+
+    <Button
+        android:id="@+id/btn_addGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_700"
+        style="@style/Widget.MaterialComponents.Button"
+        android:text="Добавить группу"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

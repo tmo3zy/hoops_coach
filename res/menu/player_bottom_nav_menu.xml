@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profile2"
+        android:title="Profile"
+        android:icon="@drawable/baseline_person_24"/>
+
+    <item
+        android:id="@+id/trainings2"
+        android:title="Trainings"
+        android:icon="@drawable/baseline_training_24"/>
+
+    <item
+        android:id="@+id/results2"
+        android:title="Results"
+        android:icon="@drawable/baseline_results_24"/>
+
+</menu>
