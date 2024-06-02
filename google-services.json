@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "433410279466",
+    "firebase_url": "https://hoopscoach-3f3a3-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "hoopscoach-3f3a3",
+    "storage_bucket": "hoopscoach-3f3a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433410279466:android:26713786b4c10bbb3b9b53",
+        "android_client_info": {
+          "package_name": "com.example.hoopscoach"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCO9iNL78kUVI1otIovhSXAkojfR_aCSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

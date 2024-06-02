@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HoopsCoach"
+        tools:targetApi="31">
+        <activity
+            android:name=".ShowExerciseDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowExercisesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowGroupExecutionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateGroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowTrainingDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowStatsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateExercisesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddTrainingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddPlayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CoachNavActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlayerNavActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
